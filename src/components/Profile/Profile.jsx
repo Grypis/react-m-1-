@@ -1,10 +1,18 @@
-const Profile = () => {
+const Profile = ({
+  name,
+  phone,
+  email,
+  status = "offline",
+  hasPhisicalAddress,
+}) => {
   return (
     <div>
-      <h2>Name: Max</h2>
-      <p>Phone: 123456789</p>
-      <p>ashjcc@example</p>
-      <p>Status: "online"</p>
+      <h2>
+        Name: {name} {hasPhisicalAddress === true && "🏠"}
+      </h2>
+      <p>Phone: {phone}</p>
+      <p>Email: {email}</p>
+      <p>Status: {status === "online" ? "✅" : "❌"} </p>
     </div>
   );
 };
