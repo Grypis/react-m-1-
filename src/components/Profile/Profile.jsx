@@ -1,3 +1,6 @@
+import clsx from "clsx";
+import "./Profile.css";
+
 const Profile = ({
   name,
   phone,
@@ -5,15 +8,20 @@ const Profile = ({
   status = "offline",
   hasPhisicalAddress,
 }) => {
+  /*  const className = ["profile"];
+  if (hasPhisicalAddress) {
+    className.push("hasPhisicalAddress");
+  } = 2 variant */
+
   return (
     <div
-      style={{
-        padding: "20px 10px",
-        border: "1px solid black",
-        borderRadius: "5px",
-        margin: "10px 10px 10px 0",
-        color: "black",
-      }}
+      // className={`profile ${hasPhisicalAddress ? "hasPhisicalAddress" : ""} `} = 1 variant
+      // className={className.join(" ")} = 2 variant
+      /* className={clsx("profile", {
+        hasPhisicalAddress: hasPhisicalAddress,
+      })}  = 3 varinat */
+
+      className={clsx("profile", hasPhisicalAddress && "hasPhisicalAddress")}
     >
       <h2>
         Name: {name} {hasPhisicalAddress === true && "🏠"}
