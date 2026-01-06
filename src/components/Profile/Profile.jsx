@@ -1,5 +1,10 @@
 import clsx from "clsx";
-import "./Profile.css";
+import css from "./Profile.module.css";
+
+import iconReact from "../../assets/react.svg";
+
+import { RiRadioButtonLine } from "react-icons/ri";
+import { HiStatusOffline } from "react-icons/hi";
 
 const Profile = ({
   name,
@@ -21,14 +26,32 @@ const Profile = ({
         hasPhisicalAddress: hasPhisicalAddress,
       })}  = 3 varinat */
 
-      className={clsx("profile", hasPhisicalAddress && "hasPhisicalAddress")}
+      className={clsx(
+        css.profile,
+        hasPhisicalAddress && css.hasPhisicalAddress
+      )}
     >
-      <h2>
+      <img src={iconReact} alt="" />
+      <h2 className={css.title}>
         Name: {name} {hasPhisicalAddress === true && "🏠"}
       </h2>
-      <p>Phone: {phone}</p>
-      <p>Email: {email}</p>
-      <p>Status: {status === "online" ? "✅" : "❌"} </p>
+      <p className={css.fieldRow}>Phone: {phone}</p>
+      <p className={css.fieldRow}>Email: {email}</p>
+      <p
+        /* className={clsx(
+          css.fieldRow,
+          status === "online" && css.online,
+          status === "offline" && css.offline
+        )} */
+
+        className={clsx(css.fieldRow, {
+          [css.online]: status === "online",
+          [css.offline]: status === "offline",
+        })}
+      >
+        Status:{" "}
+        {status === "online" ? <RiRadioButtonLine /> : <HiStatusOffline />}{" "}
+      </p>
     </div>
   );
 };
