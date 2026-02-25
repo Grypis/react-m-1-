@@ -6,36 +6,6 @@ import dataFromServer from "./db/profiles.json";
 function App() {
   return (
     <div>
-      <p className={css.fieldRow}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-        ipsam recusandae architecto repellat enim illum natus placeat aperiam
-        impedit quae.
-      </p>
-
-      <Section title="Profile list">
-        <Profile
-          name="Max"
-          phone="123456788"
-          email="1fbdjf@example.com"
-          status="online"
-          hasPhisicalAddress
-        />
-        <Profile
-          name="Max"
-          phone="123456788"
-          email="1fbdjf@example.com"
-          status="online"
-          hasPhisicalAddress
-        />
-        <Profile
-          name="Max"
-          phone="123456788"
-          email="1fbdjf@example.com"
-          status="online"
-          hasPhisicalAddress
-        />
-      </Section>
-
       <Section>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
