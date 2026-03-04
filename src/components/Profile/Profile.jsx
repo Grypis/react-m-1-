@@ -13,6 +13,10 @@ const Profile = ({
   status = "offline",
   hasPhisicalAddress,
 }) => {
+  const handleClick = (event) => {
+    console.log("event :", event);
+  };
+
   /*  const className = ["profile"];
   if (hasPhisicalAddress) {
     className.push("hasPhisicalAddress");
@@ -28,7 +32,7 @@ const Profile = ({
 
       className={clsx(
         css.profile,
-        hasPhisicalAddress && css.hasPhisicalAddress
+        hasPhisicalAddress && css.hasPhisicalAddress,
       )}
     >
       <img src={iconReact} alt="" />
@@ -52,6 +56,9 @@ const Profile = ({
         Status:{" "}
         {status === "online" ? <RiRadioButtonLine /> : <HiStatusOffline />}{" "}
       </p>
+      <button type="button" onClick={handleClick}>
+        Click to alert
+      </button>
     </div>
   );
 };
