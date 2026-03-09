@@ -12,11 +12,8 @@ const Profile = ({
   email,
   status = "offline",
   hasPhisicalAddress,
+  handleClick,
 }) => {
-  const handleClick = (event) => {
-    console.log("event :", event);
-  };
-
   /*  const className = ["profile"];
   if (hasPhisicalAddress) {
     className.push("hasPhisicalAddress");
@@ -56,7 +53,7 @@ const Profile = ({
         Status:{" "}
         {status === "online" ? <RiRadioButtonLine /> : <HiStatusOffline />}{" "}
       </p>
-      <button type="button" onClick={handleClick}>
+      <button type="button" onClick={() => handleClick(name)}>
         Click to alert
       </button>
     </div>

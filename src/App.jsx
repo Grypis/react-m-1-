@@ -18,6 +18,10 @@ function App() {
 
       <Section>
         {dataFromServer.map((profile) => {
+          const handleClick = (userName) => {
+            console.log("name :", userName);
+          };
+
           return (
             <Profile
               key={profile.email}
@@ -26,6 +30,7 @@ function App() {
               email={profile.email}
               status={profile.status}
               hasPhisicalAddress={profile.hasPhisicalAddress}
+              handleClick={handleClick}
             />
           );
         })}
