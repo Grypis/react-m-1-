@@ -4,24 +4,28 @@ import css from "./components/Profile/Profile.module.css";
 import dataFromServer from "./db/profiles.json";
 
 function App() {
+  let counter = 0;
+
+  const incrementCounter = () => {
+    counter += 1;
+    console.log("counter :", counter);
+  };
+
+  const handleClick = (userName) => {
+    console.log("name :", userName);
+  };
+
   return (
     <div>
       <Section>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Exercitationem assumenda vel cupiditate quisquam corrupti id maiores.
-          Suscipit molestias quasi unde ratione perspiciatis impedit qui
-          voluptates asperiores ex dolorem, fugiat excepturi illo corrupti quas
-          laboriosam dicta nihil explicabo vitae eaque obcaecati!
-        </p>
+        <p>Counter: {counter}</p>
+        <button type="button" onClick={incrementCounter}>
+          Add to counter
+        </button>
       </Section>
 
       <Section>
         {dataFromServer.map((profile) => {
-          const handleClick = (userName) => {
-            console.log("name :", userName);
-          };
-
           return (
             <Profile
               key={profile.email}
@@ -35,15 +39,6 @@ function App() {
           );
         })}
       </Section>
-      {/* <ProfileList list={dataFromServer} /> */}
-
-      {/*  <Profile
-        name="Max"
-        phone="123456788"
-        email="1fbdjf@example.com"
-        status="online"
-        hasPhisicalAddress
-      /> */}
     </div>
   );
 }
