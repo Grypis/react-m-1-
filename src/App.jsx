@@ -2,29 +2,17 @@ import Profile from "./components/Profile/Profile";
 import Section from "./components/Section/Section";
 import css from "./components/Profile/Profile.module.css";
 import dataFromServer from "./db/profiles.json";
+import { useState } from "react";
 
 function App() {
-  let counter = 0;
-
-  const incrementCounter = () => {
-    counter += 1;
-    console.log("counter :", counter);
-  };
-
   const handleClick = (userName) => {
-    console.log("name :", userName);
+    console.log("name: ", userName);
   };
 
   return (
     <div>
       <Section>
-        <p>Counter: {counter}</p>
-        <button type="button" onClick={incrementCounter}>
-          Add to counter
-        </button>
-      </Section>
-
-      <Section>
+        <button></button>
         {dataFromServer.map((profile) => {
           return (
             <Profile
