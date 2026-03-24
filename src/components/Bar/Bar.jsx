@@ -9,13 +9,13 @@ const Bar = ({ beer, wine, whiskey, total, onBarSupplyAdd }) => {
           <b>Total</b>: {total}
         </li>
       </ul>
-      <button type="button" onClick={() => onBarSupplyAdd()}>
+      <button type="button" onClick={() => onBarSupplyAdd("beer")}>
         Add Beer
       </button>
-      <button type="button" onClick={() => onBarSupplyAdd()}>
+      <button type="button" onClick={() => onBarSupplyAdd("wine")}>
         Add Wine
       </button>
-      <button type="button" onClick={() => onBarSupplyAdd()}>
+      <button type="button" onClick={() => onBarSupplyAdd("whiskey")}>
         Add Whiskey
       </button>
     </div>

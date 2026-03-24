@@ -21,8 +21,14 @@ function App() {
     //* setShowUserList(!showUserList)
   };
 
-  const onBarSupplyAdd = () => {
-    console.log("add");
+  const onBarSupplyAdd = (alcoName) => {
+    console.log("add", alcoName);
+
+    if (alcoName === "beer") {
+      setBottes({ ...bottles, beer: bottles["beer"] + 1 });
+      // { beer: 2, wine: 3, whiskey: 1 }; -> {beer: 2, wine: 3, whiskey: 1, beer: 2 + 1}
+      // -> {wine: 3, whiskey: 1, beer: 3}
+    }
   };
 
   const total = bottles.beer + bottles.wine + bottles.whiskey;
