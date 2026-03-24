@@ -24,11 +24,19 @@ function App() {
   const onBarSupplyAdd = (alcoName) => {
     console.log("add", alcoName);
 
-    if (alcoName === "beer") {
+    /*  if (alcoName === "beer") {
       setBottes({ ...bottles, beer: bottles["beer"] + 1 });
       // { beer: 2, wine: 3, whiskey: 1 }; -> {beer: 2, wine: 3, whiskey: 1, beer: 2 + 1}
       // -> {wine: 3, whiskey: 1, beer: 3}
     }
+    if (alcoName === "wine") {
+      setBottes({ ...bottles, wine: bottles["wine"] + 1 });
+    }
+    if (alcoName === "whiskey") {
+      setBottes({ ...bottles, whiskey: bottles["whiskey"] + 1 });
+    } */
+
+    setBottes({ ...bottles, [alcoName]: bottles[alcoName] + 1 });
   };
 
   const total = bottles.beer + bottles.wine + bottles.whiskey;
