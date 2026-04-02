@@ -4,6 +4,7 @@ import css from "./components/Profile/Profile.module.css";
 import dataFromServer from "./db/profiles.json";
 import { useState } from "react";
 import Bar from "./components/Bar/Bar";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   const [showUserList, setShowUserList] = useState(false);
@@ -52,6 +53,11 @@ function App() {
           onBarSupplyAdd={onBarSupplyAdd}
         />
       </Section>
+
+      <Section title="Modal">
+        <Modal />
+      </Section>
+
       <Section>
         <button type="button" onClick={toggleUserList}>
           Toggle User List
