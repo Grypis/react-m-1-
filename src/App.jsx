@@ -8,6 +8,7 @@ import Modal from "./components/Modal/Modal";
 
 function App() {
   const [showUserList, setShowUserList] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [bottles, setBottes] = useState({
     beer: 2,
     wine: 3,
@@ -40,6 +41,14 @@ function App() {
     setBottes({ ...bottles, [alcoName]: bottles[alcoName] + 1 });
   };
 
+  const onOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const onCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const total = bottles.beer + bottles.wine + bottles.whiskey;
 
   return (
@@ -55,7 +64,10 @@ function App() {
       </Section>
 
       <Section title="Modal">
-        <Modal />
+        <button type="button" onClick={onOpenModal}>
+          Open Modal
+        </button>
+        {isModalOpen && <Modal onCloseModal={onCloseModal} />}
       </Section>
 
       <Section>
